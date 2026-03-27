@@ -1,17 +1,15 @@
 import './globals.css';
-import { ReactNode } from 'react';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Todo App',
-  description: 'A modern todo app with categories, due dates, and priority levels',
+  description: 'A modern todo app with categories, due dates, priority levels, and dark mode.',
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased">
-        {children}
-      </body>
+    <html lang="en" suppressHydrationWarning>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
